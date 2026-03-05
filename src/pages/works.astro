@@ -1,0 +1,78 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const works = [
+  {
+    nameZh: '祈風',
+    nameEn: 'Wind Ceremony',
+    award: null,
+    videos: ['https://www.youtube.com/embed/XqdEk1uobyY'],
+  },
+  {
+    nameZh: '記憶之所棲',
+    nameEn: 'The Habitat of Memory',
+    award: '2017 李國鼎 (K.T.) 人文與科技藝術創意競賽 / 佳作',
+    videos: ['https://www.youtube.com/embed/YOxtoQGpURg'],
+  },
+  {
+    nameZh: 'Prophecy',
+    nameEn: 'Prophecy',
+    award: null,
+    videos: [
+      'https://www.youtube.com/embed/ucW-DlkryBo',
+      'https://www.youtube.com/embed/0CIfW66UyFg',
+    ],
+  },
+  {
+    nameZh: 'voice_mail ver1.0',
+    nameEn: 'voice_mail ver1.0',
+    award: null,
+    videos: ['https://www.youtube.com/embed/1jGXeIxmH30'],
+  },
+];
+---
+
+<Layout title="Works — Miroc Chi">
+  <div class="container">
+
+    <section class="works-hero">
+      <h1>Works</h1>
+      <p class="subtitle">// 獨立創作 — Personal Works</p>
+    </section>
+
+    {works.map(work => (
+      <div class="work-item">
+        <div>
+          <h2 class="work-title">
+            {work.nameZh === work.nameEn
+              ? work.nameZh
+              : `${work.nameZh} — ${work.nameEn}`}
+          </h2>
+          {work.award && <p class="work-award">{work.award}</p>}
+        </div>
+
+        <div class="work-videos">
+          {work.videos.map((url, i) => (
+            <div>
+              <p class="video-label">// video{work.videos.length > 1 ? ` ${i + 1}` : ''}</p>
+              <div class="video-wrapper">
+                <iframe
+                  src={url}
+                  title={work.nameEn}
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div class="image-placeholder">
+          <p>// images coming soon</p>
+        </div>
+      </div>
+    ))}
+
+  </div>
+</Layout>

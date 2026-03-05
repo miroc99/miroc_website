@@ -1,0 +1,29 @@
+---
+const navLinks = [
+  { href: '/projects', label: 'projects' },
+  { href: '/works',    label: 'works'    },
+  { href: '/contact',  label: 'contact'  },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<nav>
+  <div class="nav-inner container">
+    <a href="/" class="nav-logo">
+      <span class="prompt-text">miroc@chi:~$</span>&nbsp;<span class="cursor">█</span>
+    </a>
+    <ul class="nav-links">
+      {navLinks.map(link => (
+        <li>
+          <a
+            href={link.href}
+            class:list={['nav-link', { active: currentPath.startsWith(link.href) }]}
+          >
+            {link.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</nav>

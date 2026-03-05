@@ -1,0 +1,75 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const projects2018 = [
+  { year: '2018', name: '文化部補助計畫《土地、河川、我們的典寶溪》', role: '互動硬體設計' },
+  { year: '2020', name: '花蓮縣考古博物館常設展', role: '互動軟硬體設計' },
+  { year: '2020', name: '國立臺灣歷史博物館常設展更新', role: '互動軟硬體設計' },
+  { year: '2020', name: '國立臺灣歷史博物館兒童館', role: '互動硬體設計' },
+  { year: '2021', name: '國立臺灣科學教育館－溫暖小池塘體感互動遊戲', role: '軟硬體設計' },
+  { year: '2021', name: '勞動部勞動及職業安全衛生研究所－勞工安全衛生展示館', role: '互動軟硬體設計、環控設計' },
+  { year: '2022', name: '臺鐵潮州機場鐵道文物展示館', role: '互動軟硬體設計' },
+  { year: '2022', name: '《城市家人 City Family》台北合租屋現場展演 Live Exhibition', role: '互動裝置參展' },
+  { year: '2022', name: '桃園大數據成果展', role: '互動軟硬體設計' },
+  { year: '2022', name: '數感實驗室－數感大都會', role: '互動軟硬體設計' },
+  { year: '2023', name: '嘉義市立博物館老醫館主題展', role: '互動軟體設計' },
+  { year: '2023', name: 'IPASS 九周年－數拒付能無限可能', role: '互動軟硬體設計' },
+  { year: '2023', name: '臺灣客家文化館－拼．靚：臺灣客家多重面貌特展', role: '互動軟硬體設計' },
+  { year: '2023', name: '香港 IFC Mall Skipak Christmas Campaign', role: '互動軟硬體設計' },
+  { year: '2023', name: '花蓮防災教育館常設展', role: '互動軟硬體設計、環控設計' },
+];
+
+const projects2024 = [
+  { year: '2024', name: '雁行吟草', role: '程式設計' },
+  { year: '2024', name: '毅宇未來', role: '程式設計' },
+  { year: '2024', name: '集群飛行', role: '程式設計' },
+  { year: '2024', name: '扉花', role: '程式設計、燈光設計' },
+  { year: '2024', name: '熠光', role: '程式設計、燈光設計' },
+  { year: '2024', name: '海境 Venice Time Space Existence', role: '程式設計、燈光設計、機電規劃設計' },
+  { year: '2024', name: 'Channels 桃園科藝節', role: '程式設計、燈光設計' },
+  { year: '2024', name: '共動 双方藝廊', role: '程式設計' },
+  { year: '2025', name: '海境 × Kling Klang Klong 林茲數位藝術節', role: '程式設計、燈光設計、機電規劃設計' },
+  { year: '2025', name: '心的棲所：回歸', role: '程式設計、燈光設計' },
+  { year: '2025', name: 'Future-Nature Synergy 未來－自然共生', role: '程式設計、燈光設計' },
+  { year: '2025', name: '海境 Twinkle with WINTER 冬日的凝視', role: '程式設計、燈光設計、機電規劃設計' },
+  { year: '2025', name: 'input > Unknown', role: '程式設計' },
+  { year: '2026', name: 'Resona 燈具開發', role: '程式設計、機電規劃設計' },
+];
+---
+
+<Layout title="Projects — Miroc Chi">
+  <div class="container">
+
+    <section class="projects-hero">
+      <h1>Projects</h1>
+      <p class="subtitle">// 公司與合作專案</p>
+    </section>
+
+    <section class="section">
+      <p class="section-comment">// 2018–2023 · 博物館 / 展覽互動設計</p>
+      <ul class="project-list">
+        {projects2018.map(p => (
+          <li class="project-row">
+            <span class="project-year">{p.year}</span>
+            <span class="project-name">{p.name}</span>
+            <span class="project-role">{p.role}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="section">
+      <p class="section-comment">// 2024–2026 · 藝術展演 / 國際參展</p>
+      <ul class="project-list">
+        {projects2024.map(p => (
+          <li class="project-row">
+            <span class="project-year">{p.year}</span>
+            <span class="project-name">{p.name}</span>
+            <span class="project-role">{p.role}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+  </div>
+</Layout>

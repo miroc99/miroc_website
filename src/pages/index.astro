@@ -1,0 +1,140 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const cards = [
+  {
+    type: 'WORK',
+    year: '2017',
+    title: '記憶之所棲',
+    subtitle: 'The Habitat of Memory',
+    note: '李國鼎 (K.T.) 競賽 / 佳作',
+    href: '/works',
+  },
+  {
+    type: 'PROJECT',
+    year: '2025',
+    title: '海境 × Kling Klang Klong',
+    subtitle: '林茲數位藝術節',
+    note: '程式設計 / 燈光設計 / 機電規劃設計',
+    href: '/projects',
+  },
+  {
+    type: 'PROJECT',
+    year: '2024',
+    title: '集群飛行',
+    subtitle: null,
+    note: '程式設計',
+    href: '/projects',
+  },
+  {
+    type: 'PROJECT',
+    year: '2023',
+    title: 'IFC Mall Skipak',
+    subtitle: 'Christmas Campaign · Hong Kong',
+    note: '互動軟硬體設計',
+    href: '/projects',
+  },
+  {
+    type: 'PROJECT',
+    year: '2024',
+    title: '海境',
+    subtitle: 'Venice Time Space Existence',
+    note: '程式設計 / 燈光設計 / 機電規劃設計',
+    href: '/projects',
+  },
+  {
+    type: 'WORK',
+    year: null,
+    title: '祈風',
+    subtitle: 'Wind Ceremony',
+    note: null,
+    href: '/works',
+  },
+  {
+    type: 'PROJECT',
+    year: '2020',
+    title: '國立臺灣歷史博物館',
+    subtitle: '常設展更新',
+    note: '互動軟硬體設計',
+    href: '/projects',
+  },
+  {
+    type: 'PROJECT',
+    year: '2022',
+    title: '城市家人',
+    subtitle: 'City Family · Live Exhibition',
+    note: '互動裝置參展',
+    href: '/projects',
+  },
+  {
+    type: 'PROJECT',
+    year: '2025',
+    title: 'Future-Nature Synergy',
+    subtitle: '未來－自然共生',
+    note: '程式設計 / 燈光設計',
+    href: '/projects',
+  },
+];
+---
+
+<Layout title="Miroc Chi">
+  <div class="container">
+
+    <section class="hero">
+      <h1>Miroc Chi</h1>
+      <p class="subtitle">Creative Technologist</p>
+      <div class="hero-meta">
+        <div class="hero-meta-row">
+          <span class="year">2024 –</span>
+          <span class="org">WHYIXD 何理互動</span>
+        </div>
+        <div class="hero-meta-row">
+          <span class="year">2019–2023</span>
+          <span class="org">究物創造</span>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <section class="cards-section">
+    <div class="container">
+      <p class="section-comment">// selected works &amp; projects</p>
+    </div>
+    <div class="cards-outer">
+      <div class="cards-scroll">
+        <div class="cards-left-pad"></div>
+        {cards.map(card => (
+          <a href={card.href} class="card">
+            <div class="card-header">
+              <span class="card-type">{card.type}</span>
+              {card.year && <span class="card-year">{card.year}</span>}
+            </div>
+            <div class="card-body">
+              <p class="card-title">{card.title}</p>
+              {card.subtitle && <p class="card-subtitle">{card.subtitle}</p>}
+              {card.note && <p class="card-note">{card.note}</p>}
+            </div>
+          </a>
+        ))}
+        <div class="cards-right-pad"></div>
+      </div>
+    </div>
+    <div class="container">
+      <p class="scroll-hint">→ scroll</p>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .cards-outer {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .cards-left-pad,
+  .cards-right-pad {
+    width: max(32px, calc((100vw - 860px) / 2 + 32px));
+    flex-shrink: 0;
+  }
+</style>
